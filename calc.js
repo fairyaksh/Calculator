@@ -19,10 +19,11 @@ keys.addEventListener('click', e => {
         const action = key.dataset.action; //capturing the dataset attribute of this element
         const keyContent = key.textContent; //capturing the no. of the key clicked
         const displayedNum = display.textContent //capturing the currently displayed no.
+        const previousKeyType = calculator.dataset.previousKeyType
 
         // key input & concatenating following inputs after first key input
         if (!action) {
-            if (displayedNum === '0'){
+            if (displayedNum === '0' || previousKeyType === 'operator'){
                 display.textContent = keyContent;
             } else {
                 display.textContent = displayedNum + keyContent;
@@ -37,6 +38,7 @@ keys.addEventListener('click', e => {
         // depressing op keys on click so user aware of current op
         if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide'){
             key.classList.add('is-depressed') //when op clicked --> new class added to op key
+            calculator.dataset.previousKeyType = 'operator' // To tell if the previous key is op key --> add custom attribute
         }
 
         //remove new class for next no. input w/ forEach loop
