@@ -19,3 +19,17 @@ body {
     font-size: 1.688em;
     text-align: right;
 }
+
+/* --------------- Calculator Keys --------------- */
+.calc_keys {
+    background-color: #999;
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+button {
+    background-color: #fff;
+    color: #222222;
+    text-align: center;
+}
