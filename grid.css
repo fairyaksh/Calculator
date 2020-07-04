@@ -1,4 +1,4 @@
-
+/* --------------- General Settings --------------- */
 body {
     /* Reset */
     margin: 0;
@@ -6,4 +6,13 @@ body {
 
     /* General */
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+}
+
+
+
+/* --------------- Display bar --------------- */
+.calc_display {
+    background: #222222;
+    color: #fff;
+    font-size: 1.688em;
 }
