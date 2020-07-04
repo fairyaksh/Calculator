@@ -76,6 +76,13 @@ keys.addEventListener('click', e => {
 
             display.textContent = calculate(firstValue, operator, secondValue)
         }
+        
+        /* --------- Edge Cases --------- */
+
+        // Do nothing if decimal already included
+        if (!displayedNum.includes('.')){
+            display.textContent = displayedNum + '.'
+        }
     }
 })
 
