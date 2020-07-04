@@ -59,15 +59,23 @@ keys.addEventListener('click', e => {
         if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide'){
             key.classList.add('is-depressed') //when op clicked --> new class added to op key
             calculator.dataset.previousKeyType = 'operator' // To tell if the previous key is op key --> add custom attribute
-            
+
             calculator.dataset.firstValue = displayedNum
             calculator.dataset.operator = action
         }
 
-        //remove new class for next no. input w/ forEach loop
+        // remove new class for next no. input w/ forEach loop
         Array.from(key.parentNode.children) // 1. HTMLcollection of all key parent's child elements 
                                             // 2. String converted toArray for loop to work 
         .forEach(k => k.classList.remove('.is-depressed'));
+
+        if (action === 'calculate') {
+            const firstValue = calculator.dataset.firstValue
+            const operator = calculator.dataset.operator
+            const secondValue = displayedNum
+
+            display.textContent = calculate(firstValue, operator, secondValue)
+        }
     }
 })
 
