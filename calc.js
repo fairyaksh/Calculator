@@ -13,7 +13,7 @@ function clearFunc(e){
 const calculator = document.querySelector('.calculator');
 const keys = document.querySelector('.calc_keys');
 
-keys.addEventListener('click', e){
+keys.addEventListener('click', e => {
     if (e.target.matches('button')){
         const key = e.target; //capturing the element that triggered the event (aka click)
         const action = key.dataset.action; //capturing the dataset attribute of this element
@@ -34,5 +34,5 @@ keys.addEventListener('click', e){
             display.textContent = displayedNum + ".";
         }
     }
-}
+})
 
