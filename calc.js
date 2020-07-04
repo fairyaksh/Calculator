@@ -1,6 +1,6 @@
 let display = document.getElementById('display');
 
-// Clear button
+/* --------- Clear button --------- */
 const clearBtn = document.getElementById("clear");
 clearBtn.addEventListener("click", clearFunc);
 function clearFunc(e){
@@ -9,7 +9,27 @@ function clearFunc(e){
     }
 }
 
-// Calculator
+/* --------- Calculator --------- */
+
+// function for calculating operations
+
+const calculate = (n1, operator, n2) => {
+    let result = '';
+    let first = parseFloat(n1);
+    let second = parseFloat(n2);
+
+    if (operator === 'add'){
+        result = first + second
+    } else if (operator === 'subtract'){
+        result = first - second
+    } else if (operator === 'multiply'){
+        result = first * second
+    } else if (operator === 'divide'){
+        result = first / second
+    }
+    return result;
+}
+
 const calculator = document.querySelector('.calculator');
 const keys = document.querySelector('.calc_keys');
 
@@ -21,7 +41,7 @@ keys.addEventListener('click', e => {
         const displayedNum = display.textContent //capturing the currently displayed no.
         const previousKeyType = calculator.dataset.previousKeyType
 
-        // key input & concatenating following inputs after first key input
+        // key inputs
         if (!action) {
             if (displayedNum === '0' || previousKeyType === 'operator'){
                 display.textContent = keyContent;
