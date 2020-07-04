@@ -17,12 +17,12 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="calculator">
-            <div class="calc_display" id="display">0</div>
+            <div class="calc_display" data-action="add" id="display">0</div>
             <div class="calc_keys">
-                <button class="key-operator" id="add">+</button>
-                <button class="key-operator" id="subtract">-</button>
-                <button class="key-operator" id="multiply">&times</button>
-                <button class="key-operator" id="divide">÷</button>
+                <button class="key-operator" data-action="add" id="add">+</button>
+                <button class="key-operator" data-action="subtract" id="subtract">-</button>
+                <button class="key-operator" data-action="multiply" id="multiply">&times</button>
+                <button class="key-operator" data-action="divide" id="divide">÷</button>
 
                 <button id="seven">7</button>
                 <button id="eight">8</button>
@@ -35,9 +35,9 @@
                 <button id="three">3</button>
                 <button id="zero">0</button>
                 
-                <button id="decimal">.</button>
+                <button id="decimal" data-action="decimal">.</button>
                 <button id="clear" data-action="clear">AC</button>
-                <button class="key--equal" id="equals">=</button>
+                <button  id="equals" class="key-equal" data-action="calculate">=</button>
             </div>
         </div>
         <script src="calc.js" async defer></script>
