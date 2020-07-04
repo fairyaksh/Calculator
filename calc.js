@@ -33,6 +33,11 @@ keys.addEventListener('click', e => {
         if (action === 'decimal'){
             display.textContent = displayedNum + ".";
         }
+
+        // depressing op keys on click so user aware of current op
+        if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide'){
+            key.classList.add('is-depressed') //when op clicked --> new class added to op key
+        }
     }
 })
 
