@@ -38,6 +38,11 @@ keys.addEventListener('click', e => {
         if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide'){
             key.classList.add('is-depressed') //when op clicked --> new class added to op key
         }
+
+        //remove new class for next no. input w/ forEach loop
+        Array.from(key.parentNode.children) // 1. HTMLcollection of all key parent's child elements 
+                                            // 2. String converted toArray for loop to work 
+        .forEach(k => k.classList.remove('.is-depressed'));
     }
 })
 
