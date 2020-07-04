@@ -22,7 +22,7 @@ keys.addEventListener('click', e){
 
         if (!action) {
             if (displayedNum === '0'){
-                displayedNum = keyContent;
+                display.textContent = keyContent;
             } else {
                 display.textContent = displayedNum + keyContent;
             }
