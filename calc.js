@@ -59,6 +59,9 @@ keys.addEventListener('click', e => {
         if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide'){
             key.classList.add('is-depressed') //when op clicked --> new class added to op key
             calculator.dataset.previousKeyType = 'operator' // To tell if the previous key is op key --> add custom attribute
+            
+            calculator.dataset.firstValue = displayedNum
+            calculator.dataset.operator = action
         }
 
         //remove new class for next no. input w/ forEach loop
