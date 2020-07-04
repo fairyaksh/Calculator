@@ -9,7 +9,7 @@ function clearFunc(e){
     }
 }
 
-// Key presses event listener
+// Calculator
 const calculator = document.querySelector('.calculator');
 const keys = document.querySelector('.calc_keys');
 
@@ -20,12 +20,18 @@ keys.addEventListener('click', e){
         const keyContent = key.textContent; //capturing the no. of the key clicked
         const displayedNum = display.textContent //capturing the currently displayed no.
 
+        // key input & concatenating following inputs after first key input
         if (!action) {
             if (displayedNum === '0'){
                 display.textContent = keyContent;
             } else {
                 display.textContent = displayedNum + keyContent;
             }
+        }
+
+        // concatenating decimal after number input
+        if (action === 'decimal'){
+            display.textContent = displayedNum + ".";
         }
     }
 }
