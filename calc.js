@@ -1,13 +1,13 @@
 let display = document.getElementById('display');
 
-/* --------- Clear button --------- */
-const clearBtn = document.getElementById("clear");
-clearBtn.addEventListener("click", clearFunc);
-function clearFunc(e){
-    if (e.target.matches('button')){
-        display.innerHTML = "0";
-    }
-}
+// /* --------- Clear button --------- */
+// const clearBtn = document.getElementById("clear");
+// clearBtn.addEventListener("click", clearFunc);
+// function clearFunc(e){
+//     if (e.target.matches('button')){
+//         display.innerHTML = "0";
+//     }
+// }
 
 /* --------- Calculator --------- */
 
@@ -111,6 +111,7 @@ keys.addEventListener('click', e => {
         
         if (action === 'clear'){
             calculator.dataset.previousKeyType = 'clear'
+            display.innerHTML = "0";
         }
 
  
