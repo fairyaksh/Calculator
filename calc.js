@@ -97,7 +97,9 @@ keys.addEventListener('click', e => {
             const operator = calculator.dataset.operator
             let secondValue = displayedNum
 
-            display.textContent = calculate(firstValue, operator, secondValue)
+            if (firstValue) {
+                display.textContent = calculate(firstValue, operator, secondValue) //Prevent calc when op keys not yet clicked
+            }
             calculator.dataset.previousKeyType = 'calculate'
         }
         
