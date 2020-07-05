@@ -104,6 +104,7 @@ keys.addEventListener('click', e => {
 
                 display.textContent = calculate(firstValue, operator, secondValue) //Prevent calc when op keys not yet clicked
             }
+            calculator.dataset.modValue = secondValue // custom attribute added to include 2nd value during continuous calc
             calculator.dataset.previousKeyType = 'calculate'
         }
         
