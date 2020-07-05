@@ -98,6 +98,10 @@ keys.addEventListener('click', e => {
             let secondValue = displayedNum
 
             if (firstValue) {
+                if (previousKeyType === 'calculate') {
+                    firstValue = displayedNum // Make current displayed no. the end calc for continuous calc to work
+                }
+
                 display.textContent = calculate(firstValue, operator, secondValue) //Prevent calc when op keys not yet clicked
             }
             calculator.dataset.previousKeyType = 'calculate'
