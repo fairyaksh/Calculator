@@ -48,6 +48,7 @@ keys.addEventListener('click', e => {
             } else {
                 display.textContent = displayedNum + keyContent;
             }
+            calculator.dataset.previousKeyType = 'number'
         }
 
         // concatenating decimal after number input
