@@ -63,10 +63,25 @@ keys.addEventListener('click', e => {
 
         // depressing op keys on click so user aware of current op
         if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide'){
-            key.classList.add('is-depressed') //when op clicked --> new class added to op key
-            calculator.dataset.previousKeyType = 'operator' // To tell if the previous key is op key --> add custom attribute
-
-            calculator.dataset.firstValue = displayedNum
+            const firstValue = calculator.dataset.firstValue
+            const operator = calculator.dataset.operator
+            const secondValue = displayedNum
+      
+            if (
+              firstValue &&
+              operator &&
+              previousKeyType !== 'operator' &&
+              previousKeyType !== 'calculate'
+            ) {
+              const calcValue = calculate(firstValue, operator, secondValue)
+              display.textContent = calcValue
+              calculator.dataset.firstValue = calcValue
+            } else {
+              calculator.dataset.firstValue = displayedNum
+            }
+      
+            key.classList.add('is-depressed')
+            calculator.dataset.previousKeyType = 'operator'
             calculator.dataset.operator = action
         }
 
@@ -76,9 +91,9 @@ keys.addEventListener('click', e => {
         .forEach(k => k.classList.remove('.is-depressed'));
 
         if (action === 'calculate') {
-            const firstValue = calculator.dataset.firstValue
+            let firstValue = calculator.dataset.firstValue
             const operator = calculator.dataset.operator
-            const secondValue = displayedNum
+            let secondValue = displayedNum
 
             display.textContent = calculate(firstValue, operator, secondValue)
             calculator.dataset.previousKeyType = 'calculate'
