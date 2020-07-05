@@ -100,11 +100,12 @@ keys.addEventListener('click', e => {
             if (firstValue) {
                 if (previousKeyType === 'calculate') {
                     firstValue = displayedNum // Make current displayed no. the end calc for continuous calc to work
+                    secondValue = calculator.dataset.modValue // Allows calc to occur if second value exists
                 }
 
-                display.textContent = calculate(firstValue, operator, secondValue) //Prevent calc when op keys not yet clicked
+                display.textContent = calculate(firstValue, operator, secondValue) // pPevent calc when op keys not yet clicked
             }
-            calculator.dataset.modValue = secondValue // custom attribute added to include 2nd value during continuous calc
+            calculator.dataset.modValue = secondValue // Custom attribute added to include 2nd value during continuous calc
             calculator.dataset.previousKeyType = 'calculate'
         }
         
