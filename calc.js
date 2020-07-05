@@ -52,7 +52,12 @@ keys.addEventListener('click', e => {
 
         // concatenating decimal after number input
         if (action === 'decimal'){
-            display.textContent = displayedNum + ".";
+            if (!displayedNum.includes('.')){         // Do nothing if decimal already included
+            display.textContent = displayedNum + '.'
+            } else if (previousKeyType === 'operator' || 'calculate'){
+                display.textContent = '0.'
+            }
+            calculator.dataset.previousKeyType = 'decimal'       
         }
 
         // depressing op keys on click so user aware of current op
@@ -79,10 +84,7 @@ keys.addEventListener('click', e => {
         
         /* --------- Edge Cases --------- */
 
-        // Do nothing if decimal already included
-        if (!displayedNum.includes('.')){
-            display.textContent = displayedNum + '.'
-        }
+ 
     }
 })
 
