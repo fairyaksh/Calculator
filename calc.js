@@ -81,9 +81,12 @@ keys.addEventListener('click', e => {
             const secondValue = displayedNum
 
             display.textContent = calculate(firstValue, operator, secondValue)
+            calculator.dataset.previousKeyType = 'calculate'
         }
         
-        /* --------- Edge Cases --------- */
+        if (action === 'clear'){
+            calculator.dataset.previousKeyType = 'clear'
+        }
 
  
     }
