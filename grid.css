@@ -38,3 +38,9 @@ button {
 .key-operator {
     background-color: #DCDDDD;
   }
+
+  
+  /* --------------- is-depressed --------------- */
+.is-depressed:focus {
+    background-color: #A5A6A6;
+  }
