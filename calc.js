@@ -8,10 +8,10 @@ const calculate = (n1, operator, n2) => {
     let first = parseFloat(n1);
     let second = parseFloat(n2);
 
-    if (operator === 'add') return firstNum + secondNum
-    if (operator === 'subtract') return firstNum - secondNum
-    if (operator === 'multiply') return firstNum * secondNum
-    if (operator === 'divide') return firstNum / secondNum
+    if (operator === 'add') return first + second
+    if (operator === 'subtract') return first - second
+    if (operator === 'multiply') return first * second
+    if (operator === 'divide') return first / second
 }
 
 const calculator = document.querySelector('.calculator');
