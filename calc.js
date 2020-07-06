@@ -3,7 +3,6 @@ let display = document.getElementById('display');
 /* --------- Calculator --------- */
 
 // function for calculating operations
-
 const calculate = (n1, operator, n2) => {
     let first = parseFloat(n1);
     let second = parseFloat(n2);
@@ -87,7 +86,7 @@ keys.addEventListener('click', e => {
                     secondValue = calculator.dataset.modValue // Allows calc to occur if second value exists
                 }
 
-                display.textContent = calculate(firstValue, operator, secondValue) // pPevent calc when op keys not yet clicked
+                display.textContent = calculate(firstValue, operator, secondValue) // Prevent calc when op keys not yet clicked
             }
             calculator.dataset.modValue = secondValue // Custom attribute added to include 2nd value during continuous calc
             calculator.dataset.previousKeyType = 'calculate'
@@ -95,6 +94,11 @@ keys.addEventListener('click', e => {
         
         if (action === 'clear'){
             display.innerHTML = "0";
+        }
+
+        if (action !== 'clear'){
+            const clearBtn = calculator.querySelector('[data-action=clear]')
+            clearBtn.textContent = 'CE' // Hitting any key except clear should change AC to CE
         }
     }
 })
