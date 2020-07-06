@@ -5,20 +5,13 @@ let display = document.getElementById('display');
 // function for calculating operations
 
 const calculate = (n1, operator, n2) => {
-    let result = '';
     let first = parseFloat(n1);
     let second = parseFloat(n2);
 
-    if (operator === 'add'){
-        result = first + second
-    } else if (operator === 'subtract'){
-        result = first - second
-    } else if (operator === 'multiply'){
-        result = first * second
-    } else if (operator === 'divide'){
-        result = first / second
-    }
-    return result;
+    if (operator === 'add') return firstNum + secondNum
+    if (operator === 'subtract') return firstNum - secondNum
+    if (operator === 'multiply') return firstNum * secondNum
+    if (operator === 'divide') return firstNum / secondNum
 }
 
 const calculator = document.querySelector('.calculator');
