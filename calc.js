@@ -93,7 +93,9 @@ keys.addEventListener('click', e => {
         }
         
         if (action === 'clear'){
-            display.innerHTML = "0";
+            display.textContent = 0;
+            key.textContent = 'AC' // reverts from CE back to AC
+            calculator.dataset.previousKeyType = 'clear'
         }
 
         if (action !== 'clear'){
