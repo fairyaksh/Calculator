@@ -79,4 +79,9 @@ button {
 #equals:active {
     box-shadow: inset 5px 5px 10px #A37978;
     ;
-  }
+}
+
+/* --------------- Shadow inset for number keys --------------- */
+.calc_keys > .active:active {
+    box-shadow: inset -3px 1px 8px #BFBFBF;
+ }
