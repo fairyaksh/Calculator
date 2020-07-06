@@ -45,6 +45,11 @@ html {
 
 
 /* --------------- Display bar --------------- */
+
+#display {
+    padding: 10px;
+}
+
 .calc_display {
     background: #222222;
     color: #fff;
