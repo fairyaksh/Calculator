@@ -23,7 +23,6 @@ input, textarea, button {
     appearance: none;
   }
 
-
 /* --------------- Calculator container --------------- */
 
 .calculator {
@@ -66,7 +65,17 @@ button {
   }
 
 
-  /* --------------- is-depressed --------------- */
+/* --------------- is-depressed --------------- */
 .is-depressed:focus {
     background-color: #A5A6A6;
+  }
+
+/* --------------- Equals key --------------- */
+#equals {
+    grid-column: -2;
+    grid-row: 2 / span 4;
+    background-color: #D9A1A0;
+}
+#equals:active {
+    box-shadow: inset 5px 5px 10px #D9A1A0;
   }
